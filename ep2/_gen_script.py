@@ -56,7 +56,7 @@ LINES = [
     ('G07_01', '这就要用 git pull，把云端的新存档拉下来。', None),
     ('G07_02', 'pull 其实是两步：先 fetch 下载，再 merge 合并进你当前的分支。', None),
     ('G07_03', '用 git status 也能看出来：ahead 表示你比云端多存了档，behind 表示你落后了。', None),
-    ('G07_04', '所以要养成习惯：开工先 pull，收工再 push！', None),
+    ('G07_04', '所以要养成习惯：开工先 pull，收工再 push！', '所以要养成习惯：开工，先 pull！收工，再 push！'),
     # ---- branchpush 分支上云 ----
     ('D08', '那我上集开的平行世界，也能传上去吗？', None),
     ('G08_01', '当然可以！切到 idea 分支，git push -u origin idea。', '当然可以！切到 idea 分支，git push，加 u 参数，origin，idea。'),
@@ -81,7 +81,7 @@ LINES = [
     ('D11', '好像有点多，能帮我总结一下吗？', None),
     ('G11_01', '云存档，就四个命令！', None),
     ('G11_02', 'remote add 连上云端，push 推上去，clone 搬到新电脑，pull 拉下来。', None),
-    ('G11_03', '再记一句口诀：开工先 pull，收工再 push！', None),
+    ('G11_03', '再记一句口诀：开工先 pull，收工再 push！', '再记一句口诀：开工，先 pull！收工，再 push！'),
     # ---- practice 实战 ----
     ('D12', '能不能带我从头到尾，完整走一遍呀？', None),
     ('G12_01', '没问题！我们模拟两台电脑，完整实战一遍！', None),

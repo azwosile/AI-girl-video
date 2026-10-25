@@ -9,7 +9,7 @@
 |---|---|---|---|
 | 样片 | Git 三步走（44 秒） | 已完成 | `web/out/AI娘Git课_样片.mp4` |
 | 第1集 | 存档 · 读档 · 平行世界 + 实战连贯操作，片尾曲《花の塔》，4分56秒 | 已完成（v4） | `ep1/web/out/AI娘Git课_第1集.mp4` |
-| 第2集 | GitHub 云存档 | 策划 + 台词初稿 | 见 `docs/第2集_策划.md` |
+| 第2集 | GitHub 云存档：注册建库 · remote · push · clone · pull · 分支上云 · rejected · .gitignore + 实战，片尾曲《花の塔》，4分17秒 | 已完成 | `ep2/web/out/AI娘Git课_第2集.mp4` |
 
 第1集的历史版本：`ep1/v1/`（4分51秒，节奏慢）、`ep1/v2/`（3分23秒，只有“存档”部分）、`ep1/v3/`（4分27秒，三集合一，无实战段）。
 
@@ -28,6 +28,7 @@ AI娘Git课/
 │  └─ 反馈与决策记录.md    历次修改意见和对应改动
 ├─ audio/
 │  ├─ ref/                大肥鱼参考音（数据集 dwg_0002/0031/0033/0036/0053）
+│  ├─ ref_g/              GitHub娘参考音（第1集原句，GPT-SoVITS 克隆用）
 │  ├─ sfx/ sfx48/         程序音效与 BGM（sfx.py / bgm.py 生成；sfx48 为 48k 转码）
 │  └─ sfx.py  bgm.py      音效 / BGM 生成脚本
 ├─ ep1/                   第1集
@@ -43,7 +44,7 @@ AI娘Git课/
 │  │  ├─ sprites/         表情差分 webp（GitHub娘 5 张 + 大肥鱼 10 张）
 │  │  └─ fonts/           得意黑子集
 │  └─ v1/ v2/             旧版成片
-├─ ep2/                   第2集（策划中）：_gen_script.py → script.json 朗读稿 + subtitles.json 字幕稿
+├─ ep2/                   第2集：_gen_script.py → script.json 朗读稿 + subtitles.json 字幕稿；tts_gen.py 生成 vo/；web/ 结构同 ep1
 ├─ tools/key.py           绿幕抠图 → 去溢色 → 白描边贴纸（表情差分用）
 ├─ 外源/                  外部素材（片尾曲 さユり - 花の塔.mp3，mix.py 自动读取）
 ├─ web/                   样片工程（结构同上，已定稿，仅作参考）
