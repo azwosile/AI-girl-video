@@ -6,7 +6,7 @@
 **/out/
 
 # 第1集历史成片（v1~v3，单个 140~200 MB）
-ep1/v*/
+ep1/v[0-9]*/
 
 # prep.py 自动生成的 48 kHz 转码
 **/vo48/
@@ -37,3 +37,6 @@ ep3/vo_doubao_try/
 # 豆包声音素材：第三方音频，无再分发授权，只留在本机（见 audio/src_doubao/README.md）
 audio/src_doubao/*.mp4
 audio/src_doubao/dataset/
+
+# 封面中间文件（make.py 生成）
+cover/html/

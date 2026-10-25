@@ -1,76 +1,66 @@
 # AI娘 Git课
 
-用 AI 娘角色讲 Git 的系列短视频。讲师 GitHub娘 讲解，学生 大肥鱼 提问；风格为“贴纸人 MG + 花字”，节奏快。
-画面由网页引擎逐帧渲染，配音用 TTS，音效与 BGM 由程序合成。
+用 AI 娘角色讲 Git 的系列短视频，每集 4–5 分钟。讲师是 GitHub娘，学生是大肥鱼（DeepSeek 娘）；从第3集起，其他 AI 娘组成“AI 分工小队”一起出场。
+风格是“贴纸人 MG + 花字”，节奏快。画面由网页引擎逐帧渲染，配音用 GPT-SoVITS 等 TTS，音效和 BGM 由程序合成。
 
-## 当前进度
+## 成片
 
-| 集数 | 内容 | 状态 | 成片 |
+| 集数 | 内容 | 时长 | 下载（1080P） |
 |---|---|---|---|
-| 样片 | Git 三步走（44 秒） | 已完成 | `web/out/AI娘Git课_样片.mp4` |
-| 第1集 | 存档 · 读档 · 平行世界 + 实战连贯操作，片尾曲《花の塔》，4分56秒 | 已完成（v4） | `ep1/web/out/AI娘Git课_第1集.mp4` |
-| 第2集 | GitHub 云存档：注册建库 · remote · push · clone · pull · 分支上云 · rejected · 不能上传的东西 + 实战，片尾曲《花の塔》，4分17秒 | 已完成 | `ep2/web/out/AI娘Git课_第2集.mp4` |
-| 第3集 | 联机模式：协作者 · Issue · 分支 + PR · 审查 · 冲突 · 保护 main · .gitignore · Fork + 实战；AI 分工小队登场 | 策划 + 台词初稿 | 见 `docs/第3集_策划.md` |
+| 第1集 | Git 入门：存档 · 读档 · 平行世界 + 实战 | 4:56 | [Release ep1](https://github.com/azwosile/AI-girl-video/releases/tag/ep1) |
+| 第2集 | GitHub 云存档：建库 · remote · push · clone · pull · 分支上云 · rejected · 不能上传的东西 + 实战 | 4:17 | [Release ep2](https://github.com/azwosile/AI-girl-video/releases/tag/ep2) |
+| 第3集 | 联机模式：协作者 · Issue · 分支 + PR · 审查 · 冲突 · 保护 main · .gitignore · Fork + 实战；AI 分工小队登场 | 5:02 | [Release ep3](https://github.com/azwosile/AI-girl-video/releases/tag/ep3) |
+| 第4集 | Git 后悔药大全（策划中） | — | — |
 
-第1集的历史版本：`ep1/v1/`（4分51秒，节奏慢）、`ep1/v2/`（3分23秒，只有“存档”部分）、`ep1/v3/`（4分27秒，三集合一，无实战段）。
+成片不进仓库，统一放在 [Releases](https://github.com/azwosile/AI-girl-video/releases)，每集一个，附带 B站封面（16:9 + 4:3）。
 
 ## 目录结构
 
 ```
 AI娘Git课/
-├─ README.md              ← 本文件
-├─ docs/                  ← 全部文档
-│  ├─ 制作流程.md          流水线、参数、常见坑
-│  ├─ 系列大纲.md          每集内容规划
-│  ├─ 第1集_脚本.md        字幕版完整脚本（由引擎自动导出）
-│  ├─ 第1集_讲义.md        观众向命令速查，可放到简介或专栏
-│  ├─ 第2集_策划.md        第2集分段、分镜、素材、配音、排期 + 制作记录
-│  ├─ 第3集_策划.md        第3集分段、AI 分工小队人设、分镜、素材、配音
-│  ├─ 素材与授权.md        声音、形象、字体、音乐的来源和许可
-│  └─ 反馈与决策记录.md    历次修改意见和对应改动
-├─ audio/
-│  ├─ ref/                大肥鱼参考音（数据集 dwg_0002/0031/0033/0036/0053）
-│  ├─ ref_g/              GitHub娘参考音（第1集原句，GPT-SoVITS 克隆用）
-│  ├─ sfx/ sfx48/         程序音效与 BGM（sfx.py / bgm.py 生成；sfx48 为 48k 转码）
-│  └─ sfx.py  bgm.py      音效 / BGM 生成脚本
-├─ ep1/                   第1集
-│  ├─ vo/                 原始配音：G**_**.ogg（GitHub娘，按句切好）、D**.wav（大肥鱼）
-│  ├─ vo48/               prep.py 处理后的 48k 配音（提速、压停顿、裁静音）
-│  ├─ web/                渲染工程
-│  │  ├─ engine.js        引擎 + 台词 + 时间轴 + 全部场景
-│  │  ├─ index.html       载入引擎与 durations.json
-│  │  ├─ prep.py          配音处理 → durations.json
-│  │  ├─ render.py        Chrome 无头逐帧导出 → out/video.mp4
-│  │  ├─ mix.py           人声 + 音效 + BGM（人声闪避）→ out/mix.wav
-│  │  ├─ build.sh         一键全流程
-│  │  ├─ sprites/         表情差分 webp（GitHub娘 5 张 + 大肥鱼 10 张）
-│  │  └─ fonts/           得意黑子集
-│  └─ v1/ v2/             旧版成片
-├─ ep2/                   第2集：_gen_script.py → script.json 朗读稿 + subtitles.json 字幕稿；tts_gen.py 生成 vo/；web/ 结构同 ep1
-├─ ep3/                   第3集（策划中）：_gen_script.py → script.json + subtitles.json（ID 首字母 = 说话人）
-├─ tools/key.py           绿幕抠图 → 去溢色 → 白描边贴纸（表情差分用）
-├─ 外源/                  外部素材（片尾曲 さユり - 花の塔.mp3，mix.py 自动读取）
-├─ web/                   样片工程（结构同上，已定稿，仅作参考）
-└─ assets/sprites/        样片阶段的 6 张差分（第1集已改用 ep1/web/sprites）
+├─ README.md                 ← 本文件
+├─ docs/                     ← 全部文档（导航见 docs/README.md）
+│  ├─ 系列大纲.md  制作流程.md  素材与授权.md  反馈与决策记录.md
+│  ├─ 第1集/                 脚本.md · 讲义.md · B站投稿文案.md
+│  ├─ 第2集/                 策划.md · B站投稿文案.md
+│  └─ 第3集/                 策划.md · B站投稿文案.md
+├─ ep1/ ep2/ ep3/            ← 每集一个工程，结构相同
+│  ├─ _gen_script.py         台词源 → script.json（朗读稿）+ subtitles.json（字幕稿）
+│  ├─ tts_gen.py             生成配音 → vo/
+│  ├─ vo/                    定稿配音（ID 首字母 = 说话人）
+│  └─ web/                   渲染工程：engine.js · index.html · prep.py · render.py · mix.py · build.sh · sprites/ · fonts/
+│                            （out/ 成片、vo48/ 转码都由 build.sh 生成，不进仓库）
+│  ep3/ 另有：qa/（逐句 ASR 审核）、tts_doubao.py（豆包自训练声音）、_archive/（换下来的旧配音和旧立绘）
+├─ cover/                    ← B站封面：make.py 一键出 1–3 集 16:9 + 4:3；bg/ 背景图，export/ 成品
+├─ audio/                    ← 各集共用的声音
+│  ├─ ref/ ref_g/ ref_squad/ 大肥鱼 / GitHub娘 / 小队成员的参考音（GPT-SoVITS 克隆用）
+│  ├─ sfx/  sfx.py  bgm.py   程序合成的音效与 BGM
+│  └─ src_doubao/            豆包声音训练说明（原始音频只留本机）
+├─ tools/key.py              绿幕抠图 → 去溢色 → 白描边贴纸（立绘用）
+├─ sample/                   ← 最早的 44 秒样片工程（已定稿，仅作参考）
+└─ 外源/                     ← 有版权的外部素材（片尾曲），不上传，mix.py 找不到会自动跳过
 ```
 
-## 快速开始（出第1集）
+## 快速开始（以第3集为例）
 
 ```bash
-# 1) 先启动 GPT-SoVITS API（只有重新生成大肥鱼台词时才需要）
+# 1) 需要重新生成配音时才启动 GPT-SoVITS API
 cd /e/AI/TTS/GPT-SoVITS-v2pro-20261006nvidia50x0
 ./runtime/python.exe -I api_v2.py -a 127.0.0.1 -p 9880 -c GPT_SoVITS/configs/tts_v5.yaml
 
-# 2) 一键：配音处理 → 渲染 → 混音 → 成片（约 5–7 分钟）
-cd /e/AI/AI娘课程/AI娘GIt课/ep1/web && ./build.sh
+# 2) 一键：配音处理 → 逐帧渲染 → 混音 → 成片（约 6 分钟）
+cd /e/AI/AI娘课程/AI娘GIt课/ep3/web && ./build.sh
+
+# 3) 封面
+python cover/make.py 3
 ```
 
-预览：浏览器直接打开 `ep1/web/index.html` 会循环播放，可拖动查看任意时刻（不带声音）。
-
-详细步骤和改台词的方法见 `docs/制作流程.md`。
+预览：浏览器直接打开 `epN/web/index.html`，会循环播放，可以拖动查看任意时刻（不带声音）。
+详细步骤、参数、改台词的方法和常见坑见 `docs/制作流程.md`。
 
 ## 仓库
 
-- 本地：`E:\AI\AI娘课程\AI娘GIt课`（2026-10-25 从 `E:\AI\AI娘Git课` 迁入）
+- 本地：`E:\AI\AI娘课程\AI娘GIt课`
 - 远端：https://github.com/azwosile/AI-girl-video
-- 仓库只放源文件（脚本、引擎、文档、立绘、原始配音、音效源）。成片、`out/`、`vo48/`、`sfx48/` 由 `build.sh` 重新生成；`外源/` 里的版权音乐不上传，需要时手动放回。
+- 仓库只放源文件（脚本、引擎、文档、立绘、定稿配音、音效源、封面）。成片放 Releases；`out/`、`vo48/`、`sfx48/` 由 `build.sh` 重新生成；`外源/` 里的版权音乐不上传。
+- 素材授权见 `docs/素材与授权.md`：角色设计 ai-girls / ZipZipPipe，大肥鱼声音 da-fei-yu（CC BY-NC 4.0），豆包声音仅作非商用二创。整个项目非商用。
