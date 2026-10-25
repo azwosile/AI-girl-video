@@ -33,7 +33,7 @@ LINES = [
     ('D02', '人到齐了，可是谁写哪部分呢？', None),
     ('Q02', '交给我！在仓库的 Issues 里，一个任务开一条。', None),
     ('G03_01', '对，Issue 就是任务单。写清楚要做什么，再在右边的 Assignees 指定负责人。', None),
-    ('G03_02', '每条 Issue 都有编号，比如 #3：写 Claude 的介绍页。', '每条 Issue 都有编号，比如三号任务：写 Claude 的介绍页。'),
+    ('G03_02', '每条 Issue 都有编号，比如 #3：写 Claude 的介绍页。', '每条 Issue 都有编号，比如三号任务：写克劳德的介绍页。'),
     # ---- branch 每个任务一条分支 ----
     ('D03', '领到任务啦！那我直接在 main 上改？', None),
     ('G04_01', '不行哦！联机的第一条规矩：不在 main 上直接改。', None),
@@ -96,7 +96,7 @@ LINES = [
     ('G13_03', '开分支：git switch -c kimi-page。', '开分支：git switch，加 c 参数，kimi 横杠 page。'),
     ('K02', '介绍页写好了。三个月前的聊天记录，我也一字不差地整理进去了。', None),
     ('G13_04', 'git add .，git commit -m "添加 Kimi 介绍页"，再 git push -u origin kimi-page。', 'git add 点，git commit，加 m 参数，添加 Kimi 介绍页，再 git push，加 u 参数，origin，kimi 横杠 page。'),
-    ('G13_05', '回到网页开 PR，写上 Closes #6。Claude 批准，点合并，删分支。', '回到网页开 P R，写上 Closes 井号六。Claude 批准，点合并，删分支。'),
+    ('G13_05', '回到网页开 PR，写上 Closes #6。Claude 批准，点合并，删分支。', '回到网页开 P R，写上 Closes 井号六。克劳德批准，点合并，删分支。'),
     ('G13_06', '最后大家 git pull，七个人的图鉴，就合成一本啦！', None),
     ('Q03', '完工！奶茶我请！', None),
     # ---- teaser 下集预告 + 三连 ----

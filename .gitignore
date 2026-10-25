@@ -25,5 +25,8 @@ Thumbs.db
 外源/
 
 # 第2集配音的试生成轮次（定稿已挑进 ep2/vo/）与构建日志
-ep2/vo_r*/
+**/vo_r*/
+**/vo_var/
+**/clone_test/
+ep3/_var*
 out_build.log

@@ -1,0 +1,8 @@
+{
+ "Q": {"name": "千问",   "file": "q_ref.wav", "arena_voice": "voice-00", "text": "大家好，我是千问。今天的任务我已经分好了，每个人领一条，做完记得告诉我哦。"},
+ "C": {"name": "Claude", "file": "c_ref.wav", "arena_voice": "voice-01", "text": "我是 Claude。审查的时候，我会一行一行地看，每一条结论都要有可靠的来源。"},
+ "M": {"name": "Gemini", "file": "m_ref.wav", "arena_voice": "voice-02", "text": "嗨嗨，我是 Gemini！这个问题我刚刚搜过啦，答案就在这里，要不要一起看看喵？"},
+ "X": {"name": "Grok",   "file": "x_ref.wav", "arena_voice": "voice-03", "text": "我是 Grok。别绕弯子，直接说重点。这件事我五分钟就能搞定，交给我。"},
+ "B": {"name": "豆包",   "file": "b_ref.wav", "arena_voice": "voice-04", "text": "家人们好呀，我是豆包！今天也是元气满满的一天，有什么问题尽管问我吧！"},
+ "K": {"name": "Kimi",   "file": "k_ref.wav", "arena_voice": "voice-05", "text": "我是 Kimi。这本书我已经读完了，里面的每一个细节，我都还记得很清楚。"}
+}
