@@ -1,0 +1,61 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Smiley";src:url("../web/fonts/SmileySans-Oblique.ttf.woff2") format("woff2");}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#c{position:relative;width:1920px;height:1080px;overflow:hidden;font-family:"Smiley","Noto Sans CJK SC",sans-serif;
+  background:radial-gradient(circle at 62% 55%,#b07cff 0%,#7a4cf0 38%,#4a2bb8 70%,#2a1870 100%);}
+#rays{position:absolute;left:50%;top:55%;width:3600px;height:3600px;margin:-1800px 0 0 -1800px;
+  background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.13) 0deg 7deg,rgba(255,255,255,0) 7deg 15deg);}
+#grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.06) 2px,transparent 2px);background-size:80px 80px;}
+/* git graph decoration */
+#graph{position:absolute;left:0;top:0}
+.spr{position:absolute;bottom:0;filter:drop-shadow(0 10px 18px rgba(20,8,60,.55));}
+.title{position:absolute;left:250px;top:118px;transform:rotate(-4deg);transform-origin:left top}
+.t1,.t2{display:block;line-height:1;font-style:normal;letter-spacing:2px;white-space:nowrap}
+.t1{font-size:184px;color:#ffe14d;-webkit-text-stroke:22px #2a1260;paint-order:stroke fill;text-shadow:0 14px 0 #2a1260}
+.t2{font-size:138px;color:#fff;-webkit-text-stroke:20px #2a1260;paint-order:stroke fill;text-shadow:0 12px 0 #2a1260;margin:4px 0 0 40px}
+.t2 b{color:#7ef0ff}
+.badge{position:absolute;left:262px;top:26px;background:#fff;color:#4a2bb8;font-size:54px;padding:10px 30px 8px;border-radius:40px;
+  border:7px solid #2a1260;transform:rotate(-4deg);box-shadow:0 8px 0 #2a1260;white-space:nowrap}
+.badge i{font-style:normal;background:#ff4f8b;color:#fff;border-radius:26px;padding:0 18px;margin-left:12px}
+.chips{position:absolute;left:840px;top:34px;display:flex;gap:10px;transform:rotate(-3deg);transform-origin:left top}
+.chip{font-size:38px;color:#fff;background:#24124f;border:5px solid #fff;border-radius:18px;padding:6px 18px 4px;white-space:nowrap}
+.arrow{font-size:36px;color:#fff;align-self:center;-webkit-text-stroke:4px #24124f;paint-order:stroke fill}
+.stamp{position:absolute;font-size:64px;color:#ff3d5a;border:8px solid #ff3d5a;border-radius:14px;padding:6px 20px 2px;background:rgba(255,255,255,.92);
+  transform:rotate(12deg);white-space:nowrap;box-shadow:0 6px 0 rgba(42,18,96,.6)}
+.bubble{position:absolute;background:#fff;color:#1d1040;font-size:46px;padding:16px 28px 12px;border-radius:30px;border:6px solid #2a1260;white-space:nowrap;box-shadow:0 7px 0 #2a1260}
+.bubble:after{content:"";position:absolute;bottom:-30px;width:0;height:0;border:18px solid transparent;border-top:22px solid #2a1260}
+.bubble.r:after{right:60px}.bubble.l:after{left:60px}
+.name{position:absolute;font-size:40px;color:#fff;padding:2px 16px 0;border-radius:14px;border:4px solid #fff;white-space:nowrap;transform:rotate(-3deg)}
+</style></head>
+<body><div id="c">
+<div id="rays"></div><div id="grid"></div>
+<svg id="graph" style="display:none" width="1920" height="1080">
+  <g stroke="rgba(255,255,255,.22)" stroke-width="14" fill="none" stroke-linecap="round">
+    <path d="M1180 120 H1900"/><path d="M1300 120 C1380 120 1380 230 1460 230 H1700 C1780 230 1780 120 1860 120"/>
+  </g>
+  <g fill="#fff" fill-opacity=".35"><circle cx="1240" cy="120" r="22"/><circle cx="1460" cy="230" r="22"/><circle cx="1600" cy="230" r="22"/><circle cx="1860" cy="120" r="22"/></g>
+</svg>
+
+<!-- squad: back row -->
+<img class="spr" src="../web/sprites/q_tea.webp"    style="left:420px;height:660px;bottom:20px">
+<img class="spr" src="../web/sprites/k_read.webp"   style="left:730px;height:640px;bottom:30px">
+<!-- squad: front row -->
+<img class="spr" src="../web/sprites/m_cheeky.webp" style="left:905px;height:760px;bottom:-260px">
+<img class="spr" src="../web/sprites/c_cool.webp"   style="left:410px;height:780px;bottom:-280px">
+<img class="spr" src="../web/sprites/b_base.webp"   style="left:230px;height:720px;bottom:-220px">
+<img class="spr" src="../web/sprites/x_force.webp"  style="left:615px;height:700px;bottom:-250px">
+<!-- GitHub娘 lecturer at right edge -->
+<img class="spr" src="../web/sprites/g_present.webp" style="left:1580px;height:900px;bottom:-130px">
+<!-- front: DeepSeek 组长 -->
+<img class="spr" src="../web/sprites/d_leader.webp" style="left:1215px;height:1040px;bottom:-150px">
+
+<div class="badge">AI娘 Git 课<i>第 3 集</i></div>
+<div class="title"><span class="t1">7 个 AI 娘</span><span class="t2">联机写<b>代码</b>！</span></div>
+<div class="chips"><span class="chip">Issue</span><span class="arrow">→</span><span class="chip">分支</span><span class="arrow">→</span><span class="chip">PR</span><span class="arrow">→</span><span class="chip">审查</span><span class="arrow">→</span><span class="chip">合并</span></div>
+
+<div class="stamp" style="left:880px;top:900px">CONFLICT!</div>
+<div class="name" style="left:1335px;top:250px;background:#5b8cff;transform:rotate(3deg)">组长</div>
+</div></body></html>
