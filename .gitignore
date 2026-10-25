@@ -30,3 +30,10 @@ Thumbs.db
 **/clone_test/
 ep3/_var*
 out_build.log
+
+# 豆包参考音试听（可用 ep3/tts_doubao.py --try 重新生成）
+ep3/vo_doubao_try/
+
+# 豆包声音素材：第三方音频，无再分发授权，只留在本机（见 audio/src_doubao/README.md）
+audio/src_doubao/*.mp4
+audio/src_doubao/dataset/
