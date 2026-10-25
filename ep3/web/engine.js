@@ -44,7 +44,7 @@ const TEXT = {
   G05_03: "写清楚改了什么，再加一句 Closes #3，合并以后，三号任务会自动关闭。",
   D05: "开好 PR，就能直接合并了吗？",
   G06_01: "先等队友审查！这次的审查员是 Claude。",
-  C02: "第十二行写着“豆包会做菜”，没有来源。我不想放行一个只是听起来合理的说法。",
+  C02: "第十二行写着“大肥鱼会偷吃白饭”，没有来源。我不想放行一个只是听起来合理的说法。",
   G06_02: "在 Files changed 里，点任意一行就能留评论。审查员可以选 Approve 批准，或者 Request changes 要求修改。",
   G06_03: "作者在本地改好，commit、push 到同一条分支，PR 会自动更新，不用重开。",
   C03: "来源补上了。Approve，批准。",
@@ -126,7 +126,7 @@ const PLAN = [
   V('practice', 'G13_05', 'g_point'), V('practice', 'G13_06', 'g_proud'), V('practice', 'Q03', 'q_tea'),
   V('teaser', 'G14_01', 'g_explain'), V('teaser', 'G14_02', 'g_cheer'), BEAT('teaser', 8),
 ];
-const GAP_SAME = 0.04, GAP_SWITCH = 0.12, GAP_BLOCK = 0.12;
+const GAP_SAME = 0.2, GAP_SWITCH = 0.25, GAP_BLOCK = 0.18;   // v2：句与句之间留一点气口，不连读
 const U = {}, BLOCKS = [], ENTRIES = [];
 (function build() {
   let T = 0, prev = null;
@@ -682,7 +682,7 @@ const SQ = {
 };
 const SQUAD = 'QCMXBK';
 // 头像裁切：[中心 x 比例, 中心 y 比例, 半径（相对宽度）]
-const HEAD = { q_base: [0.476, 0.152, 0.12], c_base: [0.508, 0.151, 0.135], m_base: [0.51, 0.151, 0.128], x_base: [0.55, 0.225, 0.12], b_base: [0.543, 0.151, 0.13], k_base: [0.512, 0.150, 0.145], d_ok: [0.475, 0.165, 0.14], g_explain: [0.525, 0.17, 0.155] };
+const HEAD = { q_base: [0.476, 0.152, 0.12], c_base: [0.508, 0.151, 0.135], m_base: [0.51, 0.151, 0.128], x_base: [0.55, 0.225, 0.12], b_base: [0.531, 0.158, 0.135], k_base: [0.512, 0.150, 0.145], d_ok: [0.475, 0.165, 0.14], g_explain: [0.525, 0.17, 0.155] };
 function avatar(k, x, y, r, o = {}) {
   const c = SQ[k], im = SPR[c.spr]; if (!im || !im.width) return; const s = o.s ?? 1; if (s <= 0) return;
   const [hx, hy, hr] = HEAD[c.spr]; const R = hr * im.width;
@@ -1007,7 +1007,7 @@ SC.review = (t, blk, en) => {
   ['Conversation', 'Commits', 'Files changed'].forEach((s, i) => { const x = 720 + i * 250; txt(s, x, cy + 36, 26, i === 2 ? '#24292f' : '#57606a'); if (i === 2) box(x - 6, cy + 60, 210, 5, 2, '#fd8c73'); });
   const fixed = t >= P('G06_03', 0.45);
   box(720, cy + 86, 1100, 50, [10, 10, 0, 0], '#f6f8fa', '#d0d7de', 2); txt('members/claude.md', 740, cy + 111, 26, '#24292f', { font: F_CODE });
-  const L = [[10, '## Claude'], [11, '分工：审查'], [12, fixed ? '豆包会做菜（来源：豆包直播回放 3:21）' : '豆包会做菜'], [13, '口头禅：没有来源，不放行']];
+  const L = [[10, '## Claude'], [11, '分工：审查'], [12, fixed ? '大肥鱼会偷吃白饭（来源：食堂监控 12:03）' : '大肥鱼会偷吃白饭'], [13, '口头禅：没有来源，不放行']];
   L.forEach((l, i) => diffLine(720, cy + 136 + i * 48, 1100, l[0], l[1], '+', { hl: l[0] === 12 && t >= S('C02') - 0.2 && !fixed }));
   if (fixed) { ctx.save(); ctx.globalAlpha *= 1 - prog(t, P('G06_03', 0.45), 0.8); box(720, cy + 232, 1100, 48, 0, '#7cf07a'); ctx.restore(); }
   // 行内评论

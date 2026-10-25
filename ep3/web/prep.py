@@ -3,8 +3,8 @@ import json, os, re, subprocess, numpy as np, soundfile as sf
 from pathlib import Path
 EP = Path(os.environ.get('EP_DIR') or Path(__file__).resolve().parents[1]); ROOT = EP.parent
 FF = os.environ.get('FFMPEG', 'ffmpeg')
-TEMPO = {'G': 1.15, 'D': 1.1, 'Q': 1.05, 'C': 1.05, 'M': 1.05, 'X': 1.05, 'B': 1.05, 'K': 1.0}   # 小队台词来自 Arena TTS，本身较快，只微提速
-MAX_SIL, KEEP_SIL = 0.18, 0.12          # 句内静音超过 0.18s 的压到 0.12s
+TEMPO = {'G': 1.18, 'D': 1.1, 'Q': 1.05, 'C': 1.05, 'M': 1.05, 'X': 1.1, 'B': 1.05, 'K': 1.0}   # 小队台词来自 Arena TTS，本身较快，只微提速
+MAX_SIL, KEEP_SIL = 0.22, 0.18          # 句内静音超过 0.22s 的压到 0.18s（v2：留一点气口，不连读，也不拖）
 (EP / 'vo48').mkdir(exist_ok=True)
 def ff(*a): subprocess.run([FF, '-loglevel', 'error', '-y', *map(str, a)], check=True)
 def squeeze(x, sr):
