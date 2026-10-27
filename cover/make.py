@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""B站封面生成器（第1–9集 + 番外，16:9 + 4:3 两种版式）。
+"""B站封面生成器（第1–10集 + 番外，16:9 + 4:3 两种版式）。
 
 用法（项目根目录或 cover/ 目录都行）：
     python cover/make.py            # 全部集数
@@ -71,7 +71,7 @@ def spr(path, x, h, bottom=0, z=None, flip=False):
     return dict(k='spr', path=path, x=x, h=h, bottom=bottom, z=z, flip=flip)
 
 
-E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'; E4 = '../../ep4/web/sprites/'; E5 = '../../ep5/web/sprites/'; SP1 = '../../sp1/web/sprites/'; E6 = '../../ep6/web/sprites/'; E7 = '../../ep7/web/sprites/'; E8 = '../../ep8/web/sprites/'; E9 = '../../ep9/web/sprites/'
+E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'; E4 = '../../ep4/web/sprites/'; E5 = '../../ep5/web/sprites/'; SP1 = '../../sp1/web/sprites/'; E6 = '../../ep6/web/sprites/'; E7 = '../../ep7/web/sprites/'; E8 = '../../ep8/web/sprites/'; E9 = '../../ep9/web/sprites/'; E10 = '../../ep10/web/sprites/'
 
 EPISODES = {
   1: dict(bg='bg_ep1.jpg', ink='#2b1150', shade='rgba(40,12,80,.80)', shade_mid='rgba(40,12,80,.40)', burst='70% 55%',
@@ -230,6 +230,23 @@ EPISODES = {
         extra='<div class="stamp" style="left:40px;top:640px;font-size:46px;transform:rotate(-7deg)">「点菜」按钮 ✗</div>'
               '<div class="stamp" style="left:70px;top:780px;font-size:40px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">first bad commit ✓</div>'
               '<div class="bubble l" style="left:880px;top:110px;font-size:44px;transform:rotate(3deg)">到底是谁改坏的？</div>'),
+    }),
+  10: dict(bg='bg_ep10.jpg', ink='#0b4a2a', shade='rgba(6,48,28,.86)', shade_mid='rgba(6,48,28,.42)', burst='70% 50%',
+    t1='没权限也能改？', t2='第一个<b>开源 PR</b>！',
+    chips=['Fork', 'upstream', 'issue', 'PR'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 136, 136),
+        chips=(70, 610, 44),
+        items=[spr(E10+'d_medal.webp', 760, 860, -150), spr(E10+'g_fork.webp', 1130, 1110, -190)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:50px;transform:rotate(-7deg)">push 403 ✗</div>'
+              '<div class="stamp" style="left:90px;top:900px;font-size:44px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">Merged · Closes #42 ✓</div>'
+              '<div class="bubble l" style="left:940px;top:100px;font-size:48px">我也是贡献者了！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 112, 104),
+        chips=None,
+        items=[spr(E10+'d_medal.webp', 330, 820, -150), spr(E10+'g_fork.webp', 715, 1010, -170)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:46px;transform:rotate(-7deg)">push 403 ✗</div>'
+              '<div class="stamp" style="left:70px;top:780px;font-size:38px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">Merged · Closes #42 ✓</div>'
+              '<div class="bubble l" style="left:930px;top:160px;font-size:44px;transform:rotate(3deg)">我也是贡献者了！</div>'),
     }),
   'sp1': dict(bg='bg_sp1.jpg', label='番外', name='番外1', ink='#4a1a08', shade='rgba(60,18,8,.84)', shade_mid='rgba(60,18,8,.40)', burst='78% 55%',
     t1='手要敲断了？', t2='Git <b>小技巧</b>！',
