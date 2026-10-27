@@ -3,13 +3,17 @@
 > 视频：`ep2/web/out/AI娘Git课_第2集.mp4`（4:17，1080p）
 > 封面：`cover/export/AI娘Git课_第2集_封面_16x9.jpg`（1920×1080）、`cover/export/AI娘Git课_第2集_封面_4x3.jpg`（1440×1080）
 
-## 标题（选一个）
+## 标题（≤80 字，选一个）
+
+格式统一为：钩子在前 → 知识点关键词 → “5分钟入门【AI娘Git课0N】”（第4集起相同）。
 
 | # | 标题 | 钩子 |
 |---|------|------|
-| ⭐1 | 【AI娘Git课02】电脑坏了存档还在！GitHub云存档 push/clone/pull 5分钟入门 | 痛点 + 关键词 |
-| 2 | 换电脑也能接着写代码？AI娘教你把Git存档放上GitHub【AI娘Git课02】 | 场景向 |
-| 3 | push被rejected怎么办？GitHub入门一集讲清【AI娘Git课02】 | 报错搜索流量 |
+| ⭐1 | 电脑坏了存档还在吗？把Git存档放上云！GitHub push/clone/pull 5分钟入门【AI娘Git课02】 | 痛点 + 关键词 |
+| 2 | 换电脑也能接着写代码？GitHub云存档一集讲清｜remote/push/clone/pull 5分钟入门【AI娘Git课02】 | 场景向 |
+| 3 | push被rejected怎么办？GitHub云存档避坑｜push/pull/分支上云 5分钟入门【AI娘Git课02】 | 报错搜索流量 |
+
+推荐 1：和封面“电脑坏了？存档在云上！”对得上；3 能吃到“rejected”报错的搜索流量。
 
 ## 分区 / 类型
 - 类型：自制

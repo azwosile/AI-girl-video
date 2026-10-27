@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""B站封面生成器（第1–5集，16:9 + 4:3 两种版式）。
+"""B站封面生成器（第1–6集 + 番外，16:9 + 4:3 两种版式）。
 
 用法（项目根目录或 cover/ 目录都行）：
     python cover/make.py            # 全部集数
@@ -71,7 +71,7 @@ def spr(path, x, h, bottom=0, z=None, flip=False):
     return dict(k='spr', path=path, x=x, h=h, bottom=bottom, z=z, flip=flip)
 
 
-E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'; E4 = '../../ep4/web/sprites/'; E5 = '../../ep5/web/sprites/'; SP1 = '../../sp1/web/sprites/'
+E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'; E4 = '../../ep4/web/sprites/'; E5 = '../../ep5/web/sprites/'; SP1 = '../../sp1/web/sprites/'; E6 = '../../ep6/web/sprites/'
 
 EPISODES = {
   1: dict(bg='bg_ep1.jpg', ink='#2b1150', shade='rgba(40,12,80,.80)', shade_mid='rgba(40,12,80,.40)', burst='70% 55%',
@@ -162,6 +162,23 @@ EPISODES = {
               '<div class="stamp" style="left:70px;top:780px;font-size:46px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">v1.0.1 才对 ✓</div>'
               '<div class="bubble l" style="left:960px;top:110px;font-size:44px;transform:rotate(3deg)">正式发布啦！</div>'
               '<div style="position:absolute;left:1150px;top:588px;width:190px;text-align:center;font:bold 60px Consolas,monospace;color:#5a3a00;transform:rotate(-2deg);text-shadow:0 2px 0 rgba(255,255,255,.6)">v1.0</div>'),
+    }),
+  6: dict(bg='bg_ep6.jpg', ink='#0b3d1f', shade='rgba(8,48,24,.84)', shade_mid='rgba(8,48,24,.40)', burst='72% 45%',
+    t1='全是代码？', t2='变成<b>真网站</b>！',
+    chips=['Pages', 'index.html', 'push', '上线'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 150, 176),
+        chips=(70, 610, 44),
+        items=[spr(E6+'d_phone.webp', 820, 880, -150), spr(E6+'g_web.webp', 1330, 1180, -230)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:54px;transform:rotate(-7deg)">打开一屏代码 ✗</div>'
+              '<div class="stamp" style="left:90px;top:900px;font-size:44px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">dafeiyu.github.io ✓</div>'
+              '<div class="bubble l" style="left:1000px;top:110px;font-size:48px">同学都能点开！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 128, 160),
+        chips=None,
+        items=[spr(E6+'d_phone.webp', 470, 840, -150), spr(E6+'g_web.webp', 900, 1120, -230)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:50px;transform:rotate(-7deg)">打开一屏代码 ✗</div>'
+              '<div class="stamp" style="left:70px;top:780px;font-size:42px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">dafeiyu.github.io ✓</div>'
+              '<div class="bubble l" style="left:880px;top:110px;font-size:44px;transform:rotate(3deg)">同学都能点开！</div>'),
     }),
   'sp1': dict(bg='bg_sp1.jpg', label='番外', name='番外1', ink='#4a1a08', shade='rgba(60,18,8,.84)', shade_mid='rgba(60,18,8,.40)', burst='78% 55%',
     t1='手要敲断了？', t2='Git <b>小技巧</b>！',
