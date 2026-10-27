@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""B站封面生成器（第1–4集，16:9 + 4:3 两种版式）。
+"""B站封面生成器（第1–5集，16:9 + 4:3 两种版式）。
 
 用法（项目根目录或 cover/ 目录都行）：
     python cover/make.py            # 全部集数
@@ -71,7 +71,7 @@ def spr(path, x, h, bottom=0, z=None, flip=False):
     return dict(k='spr', path=path, x=x, h=h, bottom=bottom, z=z, flip=flip)
 
 
-E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'; E4 = '../../ep4/web/sprites/'
+E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'; E4 = '../../ep4/web/sprites/'; E5 = '../../ep5/web/sprites/'; SP1 = '../../sp1/web/sprites/'
 
 EPISODES = {
   1: dict(bg='bg_ep1.jpg', ink='#2b1150', shade='rgba(40,12,80,.80)', shade_mid='rgba(40,12,80,.40)', burst='70% 55%',
@@ -144,6 +144,42 @@ EPISODES = {
               '<div class="stamp" style="left:70px;top:780px;font-size:46px;transform:rotate(5deg);color:#8a3dff;border-color:#8a3dff">reflog 全找回 ✓</div>'
               '<div class="bubble r" style="left:1010px;top:560px;font-size:42px;transform:rotate(4deg)">都能找回来！</div>'),
     }),
+  5: dict(bg='bg_ep5.jpg', ink='#2e0f5c', shade='rgba(34,10,70,.84)', shade_mid='rgba(34,10,70,.42)', burst='72% 45%',
+    t1='改了几十版？', t2='打上<b>版本号</b>！',
+    chips=['git tag', 'push --tags', 'v1.0.1', 'Release'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 150, 176),
+        chips=(70, 610, 44),
+        items=[spr(E5+'b_proud.webp', 640, 700, -300), spr(E5+'d_party.webp', 930, 900, -150), spr(E5+'g_tag.webp', 1270, 1120, -200)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:54px;transform:rotate(-7deg)">改个错字就 v2.0.0 ✗</div>'
+              '<div class="stamp" style="left:90px;top:900px;font-size:48px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">v1.0.1 才对 ✓</div>'
+              '<div class="bubble l" style="left:1010px;top:120px;font-size:48px">哪一版能用？！</div>'
+              '<div style="position:absolute;left:1560px;top:556px;width:200px;text-align:center;font:bold 64px Consolas,monospace;color:#5a3a00;transform:rotate(-2deg);text-shadow:0 2px 0 rgba(255,255,255,.6)">v1.0</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 128, 160),
+        chips=None,
+        items=[spr(E5+'b_proud.webp', 250, 640, -300), spr(E5+'d_party.webp', 520, 860, -150), spr(E5+'g_tag.webp', 860, 1080, -200)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:50px;transform:rotate(-7deg)">改个错字就 v2.0.0 ✗</div>'
+              '<div class="stamp" style="left:70px;top:780px;font-size:46px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">v1.0.1 才对 ✓</div>'
+              '<div class="bubble l" style="left:960px;top:110px;font-size:44px;transform:rotate(3deg)">正式发布啦！</div>'
+              '<div style="position:absolute;left:1150px;top:588px;width:190px;text-align:center;font:bold 60px Consolas,monospace;color:#5a3a00;transform:rotate(-2deg);text-shadow:0 2px 0 rgba(255,255,255,.6)">v1.0</div>'),
+    }),
+  'sp1': dict(bg='bg_sp1.jpg', label='番外', name='番外1', ink='#4a1a08', shade='rgba(60,18,8,.84)', shade_mid='rgba(60,18,8,.40)', burst='78% 55%',
+    t1='手要敲断了？', t2='Git <b>小技巧</b>！',
+    chips=['config', 'alias', 'diff', '.gitignore'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 150, 176),
+        chips=(70, 610, 44),
+        items=[spr(SP1+'d_tired.webp', 760, 820, -170), spr(SP1+'g_tools.webp', 1260, 1120, -200)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:54px;transform:rotate(-7deg)">git stauts ✗</div>'
+              '<div class="stamp" style="left:90px;top:900px;font-size:50px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">git st ✓</div>'
+              '<div class="bubble l" style="left:1180px;top:110px;font-size:48px">用了就回不去！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 128, 160),
+        chips=None,
+        items=[spr(SP1+'d_tired.webp', 380, 760, -170), spr(SP1+'g_tools.webp', 820, 1060, -200)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:50px;transform:rotate(-7deg)">git stauts ✗</div>'
+              '<div class="stamp" style="left:70px;top:780px;font-size:48px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">git st ✓</div>'
+              '<div class="bubble l" style="left:900px;top:110px;font-size:44px;transform:rotate(3deg)">用了就回不去！</div>'),
+    }),
 }
 
 
@@ -159,7 +195,7 @@ def build_html(n, key):
         tf = 'transform:scaleX(-1);' if it['flip'] else ''
         h.append(f'<img class="spr" src="{it["path"]}" style="left:{it["x"]}px;height:{it["h"]}px;bottom:{it["bottom"]}px;{tf}">')
     h.append(f'<div class="logo" style="left:{lx}px;top:{ly}px"><div class="plate">{GIT_ICON}'
-             f'<span class="txt">AI娘 <em>Git</em>课</span></div><div class="ep">第{n}集</div></div>')
+             f'<span class="txt">AI娘 <em>Git</em>课</span></div><div class="ep">{ep.get('label', f'第{n}集')}</div></div>')
     h.append(f'<div class="title" style="left:{tx}px;top:{ty}px"><span class="t1" style="font-size:{f1}px">{ep["t1"]}</span>'
              f'<span class="t2" style="font-size:{f2}px;margin-left:{int(f2*.3)}px">{ep["t2"]}</span></div>')
     if L.get('chips'):
@@ -186,12 +222,12 @@ async def render(eps):
                 await pg.goto(f.as_uri()); await pg.evaluate('document.fonts.ready'); await pg.wait_for_timeout(400)
                 png = HERE / 'html' / f'ep{n}_{tag}.png'
                 await pg.screenshot(path=str(png)); await pg.close()
-                out = HERE / 'export' / f'AI娘Git课_第{n}集_封面_{tag}.jpg'
+                out = HERE / 'export' / f"AI娘Git课_{EPISODES[n].get('name', f'第{n}集')}_封面_{tag}.jpg"
                 Image.open(png).convert('RGB').save(out, quality=93); png.unlink()
                 print('ok', out.name)
         await b.close()
 
 
 if __name__ == '__main__':
-    eps = [int(a) for a in sys.argv[1:]] or sorted(EPISODES)
+    eps = [int(a) if a.isdigit() else a for a in sys.argv[1:]] or list(EPISODES)
     asyncio.run(render(eps))
