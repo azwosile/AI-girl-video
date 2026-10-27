@@ -1,0 +1,17 @@
+const PLAN = [
+  V('cold', 'D01', 'd_tired'),
+  V('title', 'G01_01', 'g_tools'), V('title', 'G01_02', 'g_cheer'), BEAT('title', 1.2),
+  V('cfgQ', 'D02', 'd_think'),
+  V('config', 'G02_01', 'g_explain'), V('config', 'G02_02', 'g_point'), V('config', 'G02_03', 'g_wink'), V('config', 'G02_04', 'g_type'),
+  V('aliasQ', 'D03', 'd_curious'),
+  V('alias', 'G03_01', 'g_cheer'), V('alias', 'G03_02', 'g_type'), V('alias', 'G03_03', 'g_warn'), V('alias', 'G03_04', 'g_proud'),
+  V('diffQ', 'D04', 'd_panic'),
+  V('diff', 'G04_01', 'g_present'), V('diff', 'G04_02', 'g_explain'), V('diff', 'G04_03', 'g_point'), V('diff', 'G04_04', 'g_wink'),
+  V('ignQ', 'D05', 'd_shock'),
+  V('ignore', 'G05_01', 'g_think'), V('ignore', 'G05_02', 'g_type'), V('ignore', 'G05_03', 'g_explain'), V('ignore', 'G05_04', 'g_peace'),
+  V('ask6', 'D06', 'd_raise'),
+  V('recap', 'G06_01', 'g_present'),
+  V('askP', 'D07', 'd_sparkle'),
+  V('practice', 'G07_01', 'g_type'), V('practice', 'G07_02', 'g_point'), V('practice', 'G07_03', 'g_explain'), V('practice', 'D08', 'd_party'),
+  V('teaser', 'G08_01', 'g_explain'), V('teaser', 'G08_02', 'g_cheer'), BEAT('teaser', 8),
+];

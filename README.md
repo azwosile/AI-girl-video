@@ -12,6 +12,7 @@
 | 第3集 | 联机模式：协作者 · Issue · 分支 + PR · 审查 · 冲突 · 保护 main · .gitignore · Fork + 实战；AI 分工小队登场 | 5:02 | [Release ep3](https://github.com/azwosile/AI-girl-video/releases/tag/ep3) |
 | 第4集 | Git 后悔药大全：amend · stash · reset soft/mixed/hard · revert · reflog · 报错急救 + 实战 | 4:19 | [Release ep4](https://github.com/azwosile/AI-girl-video/releases/tag/ep4) |
 | 第5集 | 版本号与发布：git tag 轻量/附注 · 删标签 · 推标签 · 回旧版修 bug · 语义化版本 · GitHub Releases + 实战 | 4:14 | [Release ep5](https://github.com/azwosile/AI-girl-video/releases/tag/ep5) |
+| 番外1 | Git 小技巧：git config 设身份 · 别名 st / lg · git diff（--staged / --stat / 比较标签）· .gitignore 不生效怎么办 + 实战 | 2:20 | [Release sp1](https://github.com/azwosile/AI-girl-video/releases/tag/sp1) |
 
 成片不进仓库，统一放在 [Releases](https://github.com/azwosile/AI-girl-video/releases)，每集一个，附带 B站封面（16:9 + 4:3）。
 
@@ -26,8 +27,9 @@ AI娘Git课/
 │  ├─ 第2集/                 策划.md · B站投稿文案.md
 │  ├─ 第3集/                 策划.md · B站投稿文案.md
 │  ├─ 第4集/                 策划.md · B站投稿文案.md
-│  └─ 第5集/                 策划.md · B站投稿文案.md
-├─ ep1/ … ep5/              ← 每集一个工程，结构相同
+│  ├─ 第5集/                 策划.md · B站投稿文案.md
+│  └─ 番外1/                 策划.md · B站投稿文案.md
+├─ ep1/ … ep5/  sp1/        ← 每集一个工程，结构相同（sp1 = 番外1）
 │  ├─ _gen_script.py         台词源 → script.json（朗读稿）+ subtitles.json（字幕稿）
 │  ├─ tts_gen.py             生成配音 → vo/
 │  ├─ vo/                    定稿配音（ID 首字母 = 说话人）
@@ -36,7 +38,8 @@ AI娘Git课/
 │  ep3/ 另有：qa/（逐句 ASR 审核）、tts_doubao.py（豆包自训练声音）、_archive/（换下来的旧配音和旧立绘）
 │  ep4/ 另有：asr4.py（逐句 ASR 审核 → qa_asr.tsv）、tts_doubao.py、_archive/vo_v1/（重生成前的旧配音）
 │  ep5/ 另有：asr5.py、tts_doubao.py、src/（引擎场景源码 plan5/scenes5 + build5.py 拼装脚本 + smoke.js 逐帧冒烟测试）
-├─ cover/                    ← B站封面：make.py 一键出 1–5 集 16:9 + 4:3；bg/ 背景图，export/ 成品
+│  sp1/ 另有：asr_sp.py、qa_asr.tsv、src/（plan_sp/common_sp/scenes_sp + build_sp.py）
+├─ cover/                    ← B站封面：make.py 一键出 1–5 集和番外的 16:9 + 4:3（python make.py sp1 只出番外）；bg/ 背景图，export/ 成品
 ├─ audio/                    ← 各集共用的声音
 │  ├─ ref/ ref_g/ ref_squad/ 大肥鱼 / GitHub娘 / 小队成员的参考音（GPT-SoVITS 克隆用）
 │  ├─ sfx/  sfx.py  bgm.py   程序合成的音效与 BGM
