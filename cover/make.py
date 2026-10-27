@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""B站封面生成器（第1–3集，16:9 + 4:3 两种版式）。
+"""B站封面生成器（第1–4集，16:9 + 4:3 两种版式）。
 
 用法（项目根目录或 cover/ 目录都行）：
     python cover/make.py            # 全部集数
@@ -71,7 +71,7 @@ def spr(path, x, h, bottom=0, z=None, flip=False):
     return dict(k='spr', path=path, x=x, h=h, bottom=bottom, z=z, flip=flip)
 
 
-E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'
+E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'; E4 = '../../ep4/web/sprites/'
 
 EPISODES = {
   1: dict(bg='bg_ep1.jpg', ink='#2b1150', shade='rgba(40,12,80,.80)', shade_mid='rgba(40,12,80,.40)', burst='70% 55%',
@@ -126,6 +126,23 @@ EPISODES = {
         extra='<div class="stamp" style="left:610px;top:910px;font-size:54px;transform:rotate(10deg)">CONFLICT!</div>'
               '<div class="name" style="left:1040px;top:268px;font-size:38px;background:#3d7bff">组长</div>'
               '<div class="stamp" style="left:20px;top:940px;font-size:40px;transform:rotate(-7deg)">⚠ 密码.env 已上传</div>'),
+    }),
+  4: dict(bg='bg_ep4.jpg', ink='#3a0f45', shade='rgba(45,10,60,.82)', shade_mid='rgba(45,10,60,.40)', burst='70% 50%',
+    t1='手滑删了提交？', t2='Git 有<b>后悔药</b>！',
+    chips=['amend', 'stash', 'reset', 'revert', 'reflog'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 150, 176),
+        chips=(70, 610, 46),
+        items=[spr(E4+'x_panic.webp', 540, 660, -330), spr(E4+'d_pill.webp', 900, 920, -170), spr(E4+'g_pill.webp', 1340, 1160, -190)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:54px;transform:rotate(-7deg)">⚠ reset --hard</div>'
+              '<div class="stamp" style="left:90px;top:900px;font-size:46px;transform:rotate(5deg);color:#8a3dff;border-color:#8a3dff">reflog 全找回 ✓</div>'
+              '<div class="bubble l" style="left:1010px;top:150px;font-size:48px">还能找回来？！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 128, 160),
+        chips=None,
+        items=[spr(E4+'x_panic.webp', 170, 620, -330), spr(E4+'d_pill.webp', 560, 860, -170), spr(E4+'g_pill.webp', 930, 1100, -190)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:52px;transform:rotate(-7deg)">⚠ reset --hard</div>'
+              '<div class="stamp" style="left:70px;top:780px;font-size:46px;transform:rotate(5deg);color:#8a3dff;border-color:#8a3dff">reflog 全找回 ✓</div>'
+              '<div class="bubble r" style="left:1010px;top:560px;font-size:42px;transform:rotate(4deg)">都能找回来！</div>'),
     }),
 }
 
