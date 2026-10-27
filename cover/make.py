@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""B站封面生成器（第1–7集 + 番外，16:9 + 4:3 两种版式）。
+"""B站封面生成器（第1–8集 + 番外，16:9 + 4:3 两种版式）。
 
 用法（项目根目录或 cover/ 目录都行）：
     python cover/make.py            # 全部集数
@@ -71,7 +71,7 @@ def spr(path, x, h, bottom=0, z=None, flip=False):
     return dict(k='spr', path=path, x=x, h=h, bottom=bottom, z=z, flip=flip)
 
 
-E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'; E4 = '../../ep4/web/sprites/'; E5 = '../../ep5/web/sprites/'; SP1 = '../../sp1/web/sprites/'; E6 = '../../ep6/web/sprites/'; E7 = '../../ep7/web/sprites/'
+E1 = '../../ep1/web/sprites/'; E2 = '../../ep2/web/sprites/'; E3 = '../../ep3/web/sprites/'; E4 = '../../ep4/web/sprites/'; E5 = '../../ep5/web/sprites/'; SP1 = '../../sp1/web/sprites/'; E6 = '../../ep6/web/sprites/'; E7 = '../../ep7/web/sprites/'; E8 = '../../ep8/web/sprites/'
 
 EPISODES = {
   1: dict(bg='bg_ep1.jpg', ink='#2b1150', shade='rgba(40,12,80,.80)', shade_mid='rgba(40,12,80,.40)', burst='70% 55%',
@@ -196,6 +196,23 @@ EPISODES = {
         extra='<div class="stamp" style="left:40px;top:640px;font-size:50px;transform:rotate(-7deg)">&lt;div&gt; 没关 ✗</div>'
               '<div class="stamp" style="left:70px;top:780px;font-size:42px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">check passing ✓</div>'
               '<div class="bubble l" style="left:880px;top:110px;font-size:44px;transform:rotate(3deg)">每次推送自动查！</div>'),
+    }),
+  8: dict(bg='bg_ep8.jpg', ink='#5c2a0b', shade='rgba(70,30,8,.84)', shade_mid='rgba(70,30,8,.40)', burst='70% 50%',
+    t1='历史乱成麻？', t2='剪成<b>一条线</b>！',
+    chips=['rebase', 'squash', 'reword', 'reflog'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 150, 150),
+        chips=(70, 610, 44),
+        items=[spr(E8+'d_film.webp', 800, 860, -150), spr(E8+'g_scissors.webp', 1330, 1180, -230)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:50px;transform:rotate(-7deg)">Merge branch ×3 ✗</div>'
+              '<div class="stamp" style="left:90px;top:900px;font-size:44px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">git log 一条线 ✓</div>'
+              '<div class="bubble l" style="left:1000px;top:110px;font-size:48px">提交历史剪干净！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 128, 116),
+        chips=None,
+        items=[spr(E8+'d_film.webp', 460, 820, -150), spr(E8+'g_scissors.webp', 900, 1120, -230)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:46px;transform:rotate(-7deg)">Merge branch ×3 ✗</div>'
+              '<div class="stamp" style="left:70px;top:780px;font-size:42px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">git log 一条线 ✓</div>'
+              '<div class="bubble l" style="left:880px;top:110px;font-size:44px;transform:rotate(3deg)">提交历史剪干净！</div>'),
     }),
   'sp1': dict(bg='bg_sp1.jpg', label='番外', name='番外1', ink='#4a1a08', shade='rgba(60,18,8,.84)', shade_mid='rgba(60,18,8,.40)', burst='78% 55%',
     t1='手要敲断了？', t2='Git <b>小技巧</b>！',
