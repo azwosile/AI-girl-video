@@ -18,6 +18,7 @@
 | 第8集 | 整理提交历史：merge 与 rebase · pull --rebase · 冲突 --continue / --abort · rebase -i 合并提交 · reword / drop / 调顺序 · 黄金法则与 --force-with-lease · reflog 救回 + 实战 | 4:20 | [Release ep8](https://github.com/azwosile/AI-girl-video/releases/tag/ep8) |
 | 第9集 | Git 侦探：log -- 文件 / log -S 搜历史 · blame 看每行是谁改的 · bisect 二分抓 bug · revert 留痕撤销 · cherry-pick 摘提交 + 实战 | 4:15 | [Release ep9](https://github.com/azwosile/AI-girl-video/releases/tag/ep9) |
 | 第10集 | 参与开源：LICENSE / CONTRIBUTING · good first issue 认领 · Fork 与 upstream · 同步复刻 · 跨仓库 PR 与 Closes #42 · 按审查意见继续推送 + 实战 | 4:10 | [Release ep10](https://github.com/azwosile/AI-girl-video/releases/tag/ep10) |
+| 第11集 | 仓库体检：count-objects 量体重 · 50 / 100 MB 限制 · 删了没用与 rm --cached + amend · Git LFS 与 .gitattributes · 换行符 text=auto / renormalize · 密钥泄露先作废换新 · filter-repo 清历史与推送保护 + 实战 | 4:18 | [Release ep11](https://github.com/azwosile/AI-girl-video/releases/tag/ep11) |
 
 成片不进仓库，统一放在 [Releases](https://github.com/azwosile/AI-girl-video/releases)，每集一个，附带 B站封面（16:9 + 4:3）。
 
@@ -38,8 +39,9 @@ AI娘Git课/
 │  ├─ 第7集/                 策划.md · B站投稿文案.md
 │  ├─ 第8集/                 策划.md · B站投稿文案.md
 │  ├─ 第9集/                 策划.md · B站投稿文案.md
-│  └─ 第10集/                策划.md · B站投稿文案.md
-├─ ep1/ … ep10/ sp1/        ← 每集一个工程，结构相同（sp1 = 番外1）
+│  ├─ 第10集/                策划.md · B站投稿文案.md
+│  └─ 第11集/                策划.md · B站投稿文案.md
+├─ ep1/ … ep11/ sp1/        ← 每集一个工程，结构相同（sp1 = 番外1）
 │  ├─ _gen_script.py         台词源 → script.json（朗读稿）+ subtitles.json（字幕稿）
 │  ├─ tts_gen.py             生成配音 → vo/
 │  ├─ vo/                    定稿配音（ID 首字母 = 说话人）
@@ -54,7 +56,8 @@ AI娘Git课/
 │  ep8/ 另有：asr8.py、qa_asr.tsv、src/（plan8/common8/helpers8/scenes8a–c + build8.py + key8.py 抠绿幕 + smoke.js + preview.js）
 │  ep9/ 另有：asr9.py、qa_asr.tsv、src/（plan9/common9/helpers9/scenes9a–c + build9.py + key9.py 抠绿幕 + smoke.js + preview.js）
 │  ep10/ 另有：asr10.py、qa_asr.tsv、src/（plan10/common10/helpers10/scenes10a–c + build10.py + key10.py 抠绿幕 + smoke.js + preview.js）
-├─ cover/                    ← B站封面：make.py 一键出 1–10 集和番外的 16:9 + 4:3（python make.py sp1 只出番外）；bg/ 背景图，export/ 成品
+│  ep11/ 另有：asr11.py、qa_asr.tsv、src/（plan11/common11/helpers11/scenes11a–c + build11.py + key11.py 抠绿幕 + smoke.js + preview.js）
+├─ cover/                    ← B站封面：make.py 一键出 1–11 集和番外的 16:9 + 4:3（python make.py sp1 只出番外）；bg/ 背景图，export/ 成品
 ├─ audio/                    ← 各集共用的声音
 │  ├─ ref/ ref_g/ ref_squad/ 大肥鱼 / GitHub娘 / 小队成员的参考音（GPT-SoVITS 克隆用）
 │  ├─ sfx/  sfx.py  bgm.py   程序合成的音效与 BGM
@@ -64,7 +67,7 @@ AI娘Git课/
 └─ 外源/                     ← 有版权的外部素材（片尾曲），不上传，mix.py 找不到会自动跳过
 ```
 
-## 快速开始（以第10集为例）
+## 快速开始（以第11集为例）
 
 ```bash
 # 1) 需要重新生成配音时才启动 GPT-SoVITS API
@@ -72,10 +75,10 @@ cd /e/AI/TTS/GPT-SoVITS-v2pro-20261006nvidia50x0
 ./runtime/python.exe -I api_v2.py -a 127.0.0.1 -p 9880 -c GPT_SoVITS/configs/tts_v5.yaml
 
 # 2) 一键：配音处理 → 逐帧渲染 → 混音 → 成片（约 6 分钟）
-cd /e/AI/AI娘课程/AI娘GIt课/ep10/web && ./build.sh
+cd /e/AI/AI娘课程/AI娘GIt课/ep11/web && ./build.sh
 
 # 3) 封面
-python cover/make.py 10
+python cover/make.py 11
 ```
 
 预览：浏览器直接打开 `epN/web/index.html`，会循环播放，可以拖动查看任意时刻（不带声音）。
