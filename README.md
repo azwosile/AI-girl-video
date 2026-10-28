@@ -1,6 +1,6 @@
 # AI娘 Git课
 
-用 AI 娘角色讲 Git 的系列短视频，每集 4–5 分钟，**正片 12 集已完结**（之后还有番外）。讲师是 GitHub娘，学生是大肥鱼（DeepSeek 娘）；从第3集起，其他 AI 娘组成“AI 分工小队”一起出场。
+用 AI 娘角色讲 Git 的系列短视频，每集 4–5 分钟，**正片 12 集 + 番外 6 集已完结**（番外每集 2–3 分钟）。讲师是 GitHub娘，学生是大肥鱼（DeepSeek 娘）；从第3集起，其他 AI 娘组成“AI 分工小队”一起出场。
 风格是“贴纸人 MG + 花字”，节奏快。画面由网页引擎逐帧渲染，配音用 GPT-SoVITS 等 TTS，音效和 BGM 由程序合成。
 
 ## 成片
@@ -20,6 +20,11 @@
 | 第10集 | 参与开源：LICENSE / CONTRIBUTING · good first issue 认领 · Fork 与 upstream · 同步复刻 · 跨仓库 PR 与 Closes #42 · 按审查意见继续推送 + 实战 | 4:10 | [Release ep10](https://github.com/azwosile/AI-girl-video/releases/tag/ep10) |
 | 第11集 | 仓库体检：count-objects 量体重 · 50 / 100 MB 限制 · 删了没用与 rm --cached + amend · Git LFS 与 .gitattributes · 换行符 text=auto / renormalize · 密钥泄露先作废换新 · filter-repo 清历史与推送保护 + 实战 | 4:18 | [Release ep11](https://github.com/azwosile/AI-girl-video/releases/tag/ep11) |
 | 第12集 | 毕业篇：保护规则不许绕过与 GH006 · CODEOWNERS 与代码负责人审查 · 新提交让旧批准作废与状态检查 · merge / squash / rebase 三种合并与自动删分支 · 推标签自动发 Release · 团队工作流七步走 + 实战 + 毕业典礼 | 4:17 | [Release ep12](https://github.com/azwosile/AI-girl-video/releases/tag/ep12) |
+| 番外2 | SSH 与多账号：ssh-keygen 造钥匙 · 公钥加到 GitHub · ssh -T 测试 · remote set-url · 一把公钥只能一个号 · ~/.ssh/config 别名 · includeIf 自动切换提交邮箱 + 实战 | 2:08 | [Release sp2](https://github.com/azwosile/AI-girl-video/releases/tag/sp2) |
+| 番外3 | 图形界面工具：VS Code 源代码管理 · 对比 / 暂存 / 提交 / 同步 / 放弃更改 · 暂存所选范围与 git add -p · 冲突按钮与合并编辑器 · GitHub Desktop · 提交图 + 实战 | 2:01 | [Release sp3](https://github.com/azwosile/AI-girl-video/releases/tag/sp3) |
+| 番外4 | GitHub CLI：gh auth login / switch · repo clone / create / fork --clone · pr create / checkout / checks / merge · issue list / develop · --web + 实战 | 2:03 | [Release sp4](https://github.com/azwosile/AI-girl-video/releases/tag/sp4) |
+| 番外5 | 提交规范与钩子：标题 + 空行 + 原因 · 约定式提交 feat / fix / docs · log --grep · commit.template · commit-msg / pre-commit 钩子 · core.hooksPath · --no-verify + 实战 | 2:00 | [Release sp5](https://github.com/azwosile/AI-girl-video/releases/tag/sp5) |
+| 番外6 | 网页里写代码：铅笔在线编辑 · Commit changes 与修改建议 · 按 . 打开 github.dev · Codespaces 与免费额度 · 三个工具怎么选 + 实战 | 2:00 | [Release sp6](https://github.com/azwosile/AI-girl-video/releases/tag/sp6) |
 
 成片不进仓库，统一放在 [Releases](https://github.com/azwosile/AI-girl-video/releases)，每集一个，附带 B站封面（16:9 + 4:3）。
 
@@ -42,8 +47,13 @@ AI娘Git课/
 │  ├─ 第9集/                 策划.md · B站投稿文案.md
 │  ├─ 第10集/                策划.md · B站投稿文案.md
 │  ├─ 第11集/                策划.md · B站投稿文案.md
-│  └─ 第12集/                策划.md · B站投稿文案.md
-├─ ep1/ … ep12/ sp1/        ← 每集一个工程，结构相同（sp1 = 番外1）
+│  ├─ 第12集/                策划.md · B站投稿文案.md
+│  ├─ 番外2/                 策划.md · B站投稿文案.md
+│  ├─ 番外3/                 策划.md · B站投稿文案.md
+│  ├─ 番外4/                 策划.md · B站投稿文案.md
+│  ├─ 番外5/                 策划.md · B站投稿文案.md
+│  └─ 番外6/                 策划.md · B站投稿文案.md
+├─ ep1/ … ep12/ sp1/ … sp6/ ← 每集一个工程，结构相同（spN = 番外N）
 │  ├─ _gen_script.py         台词源 → script.json（朗读稿）+ subtitles.json（字幕稿）
 │  ├─ tts_gen.py             生成配音 → vo/
 │  ├─ vo/                    定稿配音（ID 首字母 = 说话人）
@@ -60,7 +70,9 @@ AI娘Git课/
 │  ep10/ 另有：asr10.py、qa_asr.tsv、src/（plan10/common10/helpers10/scenes10a–c + build10.py + key10.py 抠绿幕 + smoke.js + preview.js）
 │  ep11/ 另有：asr11.py、qa_asr.tsv、src/（plan11/common11/helpers11/scenes11a–c + build11.py + key11.py 抠绿幕 + smoke.js + preview.js）
 │  ep12/ 另有：asr12.py、qa_asr.tsv、src/（plan12/common12/helpers12/scenes12a–c + build12.py + key12.py 抠绿幕 + smoke.js + preview.js）
-├─ cover/                    ← B站封面：make.py 一键出 1–12 集和番外的 16:9 + 4:3（python make.py sp1 只出番外）；bg/ 背景图，export/ 成品
+│  sp2/ … sp6/ 另有：asr_sp.py、qa_*.tsv、src/（plan_spN + scenes_spN，共用组件和拼装脚本在顶层 spkit/）
+├─ spkit/                    ← 番外2–6 共用：build_sp.py（拼引擎）· kit/（面板、讲解、标题、片尾模板）· smoke.js
+├─ cover/                    ← B站封面：make.py 一键出 1–12 集和番外1–6 的 16:9 + 4:3（python make.py sp3 只出番外3）；bg/ 背景图，export/ 成品
 ├─ audio/                    ← 各集共用的声音
 │  ├─ ref/ ref_g/ ref_squad/ 大肥鱼 / GitHub娘 / 小队成员的参考音（GPT-SoVITS 克隆用）
 │  ├─ sfx/  sfx.py  bgm.py   程序合成的音效与 BGM

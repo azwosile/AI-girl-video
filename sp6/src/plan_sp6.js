@@ -1,0 +1,16 @@
+const PLAN = [
+  V('cold', 'Q01', 'q_alarm'), V('cold', 'D01', 'd_panic'),
+  V('why', 'G01_01', 'g_web'),
+  V('title', 'G01_02', 'g_web'), BEAT('title', 1.2),
+  V('penQ', 'D02', 'd_curious'),
+  V('pen', 'G02_01', 'g_mouse'), V('pen', 'G02_02', 'g_point'), V('pen', 'G02_03', 'g_check'),
+  V('devQ', 'D03', 'd_think'),
+  V('dev', 'G03_01', 'g_web'), V('dev', 'G03_02', 'g_type'), V('dev', 'G03_03', 'g_warn'), V('dev', 'G03_04', 'g_point'), BEAT('dev', 2),
+  V('csQ', 'D04', 'd_cloud'),
+  V('cs', 'G04_01', 'g_explain'), V('cs', 'G04_02', 'g_term'), V('cs', 'G04_03', 'g_warn'), BEAT('cs', 2),
+  V('pickQ', 'D05', 'd_think'),
+  V('pick', 'G05_01', 'g_explain'), V('pick', 'G05_02', 'g_wink'), BEAT('pick', 2),
+  V('askP', 'D06', 'd_leader'),
+  V('practice', 'G06_01', 'g_type'), V('practice', 'G06_02', 'g_point'), V('practice', 'G06_03', 'g_proud'), V('practice', 'Q02', 'q_point'), V('practice', 'D07', 'd_sparkle'), BEAT('practice', 3),
+  V('teaser', 'G07_01', 'g_present'), V('teaser', 'G07_02', 'g_cheer'), BEAT('teaser', 10.8),
+];

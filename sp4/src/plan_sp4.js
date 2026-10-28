@@ -1,0 +1,16 @@
+const PLAN = [
+  V('cold', 'D01', 'd_panic'),
+  V('why', 'G01_01', 'g_term'),
+  V('title', 'G01_02', 'g_cheer'), BEAT('title', 1.2),
+  V('authQ', 'D02', 'd_curious'),
+  V('auth', 'G02_01', 'g_type'), V('auth', 'G02_02', 'g_explain'), V('auth', 'G02_03', 'g_wink'),
+  V('repoQ', 'D03', 'd_think'),
+  V('repo', 'G03_01', 'g_term'), V('repo', 'G03_02', 'g_type'), V('repo', 'G03_03', 'g_web'), V('repo', 'G03_04', 'g_fork'),
+  V('prQ', 'D04', 'd_curious'),
+  V('pr', 'G04_01', 'g_type'), V('pr', 'G04_02', 'g_term'), V('pr', 'G04_03', 'g_check'), V('pr', 'X01', 'x_thumb'), V('pr', 'G04_04', 'g_point'),
+  V('issueQ', 'D05', 'd_think'),
+  V('issue', 'G05_01', 'g_explain'), V('issue', 'G05_02', 'g_web'), V('issue', 'G05_03', 'g_term'),
+  V('askP', 'D06', 'd_leader'),
+  V('practice', 'G06_01', 'g_type'), V('practice', 'G06_02', 'g_check'), V('practice', 'G06_03', 'g_proud'), V('practice', 'D07', 'd_party'),
+  V('teaser', 'G07_01', 'g_present'), V('teaser', 'G07_02', 'g_cheer'), BEAT('teaser', 8),
+];

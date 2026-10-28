@@ -1,0 +1,16 @@
+const PLAN = [
+  V('cold', 'D01', 'd_panic'),
+  V('why', 'G01_01', 'g_explain'),
+  V('title', 'G01_02', 'g_cheer'), BEAT('title', 1.2),
+  V('keyQ', 'D02', 'd_curious'),
+  V('key', 'G02_01', 'g_type'), V('key', 'G02_02', 'g_warn'),
+  V('pubQ', 'D03', 'd_think'),
+  V('pub', 'G03_01', 'g_web'), V('pub', 'G03_02', 'g_check'), V('pub', 'G03_03', 'g_point'),
+  V('multiQ', 'D04', 'd_keys'),
+  V('multi', 'G04_01', 'g_warn'), V('multi', 'G04_02', 'g_explain'), V('multi', 'G04_03', 'g_wink'),
+  V('idQ', 'C01', 'c_read'), V('idQ', 'D05', 'd_shock'),
+  V('id', 'G05_01', 'g_explain'), V('id', 'G05_02', 'g_type'), V('id', 'G05_03', 'g_check'), V('id', 'C02', 'c_ok'),
+  V('askP', 'D06', 'd_leader'),
+  V('practice', 'G06_01', 'g_type'), V('practice', 'G06_02', 'g_point'), V('practice', 'G06_03', 'g_proud'), V('practice', 'D07', 'd_party'),
+  V('teaser', 'G07_01', 'g_present'), V('teaser', 'G07_02', 'g_cheer'), BEAT('teaser', 8),
+];

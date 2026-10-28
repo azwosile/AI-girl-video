@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""B站封面生成器（第1–12集 + 番外，16:9 + 4:3 两种版式）。
+"""B站封面生成器（第1–12集 + 番外1–6，16:9 + 4:3 两种版式）。
 
 用法（项目根目录或 cover/ 目录都行）：
     python cover/make.py            # 全部集数
@@ -298,6 +298,71 @@ EPISODES = {
         extra='<div class="stamp" style="left:40px;top:640px;font-size:50px;transform:rotate(-7deg)">git stauts ✗</div>'
               '<div class="stamp" style="left:70px;top:780px;font-size:48px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">git st ✓</div>'
               '<div class="bubble l" style="left:900px;top:110px;font-size:44px;transform:rotate(3deg)">用了就回不去！</div>'),
+    }),
+  'sp2': dict(bg='bg_sp2.jpg', label='番外2', name='番外2', ink='#3a2408', shade='rgba(40,24,6,.86)', shade_mid='rgba(40,24,6,.42)', burst='78% 55%',
+    t1='公司号个人号分不清？', t2='<b>SSH</b> 多账号！',
+    chips=['ssh-keygen', '加公钥', '~/.ssh/config', 'includeIf'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 124, 160),
+        chips=(70, 610, 40),
+        items=[spr('../../sp2/web/sprites/'+'d_keys.webp', 760, 820, -170), spr('../../sp2/web/sprites/'+'g_point.webp', 1260, 1120, -200)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:50px;transform:rotate(-7deg)">Permission denied ✗</div><div class="stamp" style="left:90px;top:900px;font-size:46px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">Hi dafeiyu! ✓</div><div class="bubble l" style="left:1180px;top:110px;font-size:48px">一台电脑两个号！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 104, 132),
+        chips=None,
+        items=[spr('../../sp2/web/sprites/'+'d_keys.webp', 380, 760, -170), spr('../../sp2/web/sprites/'+'g_point.webp', 820, 1060, -200)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:46px;transform:rotate(-7deg)">Permission denied ✗</div><div class="stamp" style="left:70px;top:780px;font-size:42px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">Hi dafeiyu! ✓</div><div class="bubble l" style="left:900px;top:110px;font-size:44px;transform:rotate(3deg)">一台电脑两个号！</div>'),
+    }),
+  'sp3': dict(bg='bg_sp3.jpg', label='番外3', name='番外3', ink='#0b2a4a', shade='rgba(6,26,50,.86)', shade_mid='rgba(6,26,50,.42)', burst='78% 55%',
+    t1='不想敲命令？', t2='<b>图形界面</b>用 Git！',
+    chips=['VS Code', '按块暂存', '合并编辑器', 'GitHub Desktop'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 150, 150),
+        chips=(70, 610, 40),
+        items=[spr('../../sp3/web/sprites/'+'d_curious.webp', 760, 820, -170), spr('../../sp3/web/sprites/'+'g_mouse.webp', 1260, 1120, -200)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:50px;transform:rotate(-7deg)">冲突看不懂 ✗</div><div class="stamp" style="left:90px;top:900px;font-size:46px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">点一下就解决 ✓</div><div class="bubble l" style="left:1180px;top:110px;font-size:48px">鼠标点点就行！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 128, 124),
+        chips=None,
+        items=[spr('../../sp3/web/sprites/'+'d_curious.webp', 380, 760, -170), spr('../../sp3/web/sprites/'+'g_mouse.webp', 820, 1060, -200)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:46px;transform:rotate(-7deg)">冲突看不懂 ✗</div><div class="stamp" style="left:70px;top:780px;font-size:42px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">点一下就解决 ✓</div><div class="bubble l" style="left:900px;top:110px;font-size:44px;transform:rotate(3deg)">鼠标点点就行！</div>'),
+    }),
+  'sp4': dict(bg='bg_sp4.jpg', label='番外4', name='番外4', ink='#0d1b2a', shade='rgba(6,12,24,.88)', shade_mid='rgba(6,12,24,.44)', burst='78% 55%',
+    t1='网页终端来回切？', t2='GitHub <b>CLI</b>！',
+    chips=['gh auth', 'gh repo', 'gh pr', 'gh issue'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 128, 170),
+        chips=(70, 610, 40),
+        items=[spr('../../sp4/web/sprites/'+'d_panic.webp', 760, 820, -170), spr('../../sp4/web/sprites/'+'g_term.webp', 1260, 1120, -200)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:50px;transform:rotate(-7deg)">来回切窗口 ✗</div><div class="stamp" style="left:90px;top:900px;font-size:46px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">gh pr merge ✓</div><div class="bubble l" style="left:1180px;top:110px;font-size:48px">终端里全搞定！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 106, 140),
+        chips=None,
+        items=[spr('../../sp4/web/sprites/'+'d_panic.webp', 380, 760, -170), spr('../../sp4/web/sprites/'+'g_term.webp', 820, 1060, -200)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:46px;transform:rotate(-7deg)">来回切窗口 ✗</div><div class="stamp" style="left:70px;top:780px;font-size:42px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">gh pr merge ✓</div><div class="bubble l" style="left:900px;top:110px;font-size:44px;transform:rotate(3deg)">终端里全搞定！</div>'),
+    }),
+  'sp5': dict(bg='bg_sp5.jpg', label='番外5', name='番外5', ink='#4a0b2a', shade='rgba(60,8,36,.86)', shade_mid='rgba(60,8,36,.42)', burst='78% 55%',
+    t1='提交说明看不懂？', t2='<b>规范</b>与钩子！',
+    chips=['feat / fix', '提交模板', 'commit-msg', 'hooksPath'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 128, 160),
+        chips=(70, 610, 40),
+        items=[spr('../../sp5/web/sprites/'+'d_heavy.webp', 760, 820, -170), spr('../../sp5/web/sprites/'+'g_hook.webp', 1260, 1120, -200)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:50px;transform:rotate(-7deg)">"改了点" ✗</div><div class="stamp" style="left:90px;top:900px;font-size:46px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">fix: 修复按钮错位 ✓</div><div class="bubble l" style="left:1180px;top:110px;font-size:48px">钩子来把关！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 106, 134),
+        chips=None,
+        items=[spr('../../sp5/web/sprites/'+'d_heavy.webp', 380, 760, -170), spr('../../sp5/web/sprites/'+'g_hook.webp', 820, 1060, -200)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:46px;transform:rotate(-7deg)">"改了点" ✗</div><div class="stamp" style="left:70px;top:780px;font-size:42px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">fix: 修复按钮错位 ✓</div><div class="bubble l" style="left:900px;top:110px;font-size:44px;transform:rotate(3deg)">钩子来把关！</div>'),
+    }),
+  'sp6': dict(bg='bg_sp6.jpg', label='番外6', name='番外6', ink='#1d1a5c', shade='rgba(20,16,70,.86)', shade_mid='rgba(20,16,70,.42)', burst='78% 55%',
+    t1='电脑没装 Git？', t2='<b>网页里</b>写代码！',
+    chips=['铅笔', '按 . 键', 'github.dev', 'Codespaces'],
+    layouts={
+      '169': dict(W=1920, logo=(56, 36, 1.14), title=(64, 214, 150, 150),
+        chips=(70, 610, 40),
+        items=[spr('../../sp6/web/sprites/'+'d_cloud.webp', 760, 820, -170), spr('../../sp6/web/sprites/'+'g_web.webp', 1260, 1120, -200)],
+        extra='<div class="stamp" style="left:56px;top:770px;font-size:50px;transform:rotate(-7deg)">没装 Git ✗</div><div class="stamp" style="left:90px;top:900px;font-size:46px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">PR 照样提 ✓</div><div class="bubble l" style="left:1180px;top:110px;font-size:48px">按一下句号键！</div>'),
+      '43': dict(W=1440, logo=(40, 32, 1.0), title=(48, 188, 124, 124),
+        chips=None,
+        items=[spr('../../sp6/web/sprites/'+'d_cloud.webp', 380, 760, -170), spr('../../sp6/web/sprites/'+'g_web.webp', 820, 1060, -200)],
+        extra='<div class="stamp" style="left:40px;top:640px;font-size:46px;transform:rotate(-7deg)">没装 Git ✗</div><div class="stamp" style="left:70px;top:780px;font-size:42px;transform:rotate(5deg);color:#14a05a;border-color:#14a05a">PR 照样提 ✓</div><div class="bubble l" style="left:900px;top:110px;font-size:44px;transform:rotate(3deg)">按一下句号键！</div>'),
     }),
 }
 
